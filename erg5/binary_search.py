@@ -2,6 +2,7 @@
 def binary_search(arr, key):
     # Sorts the array to make sure binary search can be applied
     arr.sort()
+    # Prints the sorted array for debugging purposes
     print(arr)
     # Defines the first and last index of the array
     last = len(arr) - 1
