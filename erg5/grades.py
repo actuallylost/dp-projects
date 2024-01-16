@@ -27,11 +27,11 @@ def sort_students(arr, subject):
 
 # Defines the main function
 def main():
-    grades = [
+    students = [
         {"name": "Alice", "math": 75, "physics": 82, "chemistry": 90},
         {"name": "Bob", "math": 88, "physics": 79, "chemistry": 95},
         {"name": "Charlie", "math": 92, "physics": 85, "chemistry": 88},
     ]
-    print(calculate_mean(grades))
-    print(search_student("Bob", grades))
-    print(sort_students(grades, "math"))
+    print(calculate_mean(students))
+    print(search_student("Bob", students))
+    print(sort_students(students, "math"))
