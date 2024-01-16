@@ -1,3 +1,6 @@
+import sys
+sys.path.append("../")
+
 from binary_search import binary_search
 
 # Defines test function for binary_search with an empty array as input

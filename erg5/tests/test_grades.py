@@ -1,3 +1,6 @@
+import sys
+sys.path.append("../")
+
 from grades import calculate_mean, search_student, sort_students
 
 # Defines test function for calculate_mean with an empty array as input
@@ -30,6 +33,18 @@ def test_search_student_empty_array():
 def test_search_student():
     students = [
         {"name": "Alice", "math": 75, "physics": 82, "chemistry": 90},
+    ]
+    assert search_student("Alice", students) == {
+        "name": "Alice", "math": 75, "physics": 82, "chemistry": 90
+    }
+
+# Defines test function for search_student with an array with multiple students as input
+# and the student input is the first student in the array
+def test_search_student_multiple_students():
+    students = [
+        {"name": "Alice", "math": 75, "physics": 82, "chemistry": 90},
+        {"name": "Bob", "math": 88, "physics": 79, "chemistry": 95},
+        {"name": "Charlie", "math": 92, "physics": 85, "chemistry": 88},
     ]
     assert search_student("Alice", students) == {
         "name": "Alice", "math": 75, "physics": 82, "chemistry": 90
