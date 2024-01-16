@@ -1,9 +1,9 @@
-# Defines a function that implements binary search
 def binary_search(arr, key):
-    # Sorts the array to make sure binary search can be applied
-    arr.sort()
-    # Prints the sorted array for debugging purposes
-    print(arr)
+    """
+    Implement binary search.
+    @param arr - The array to search.
+    @param key - The key to search for.
+    """
     # Defines the first and last index of the array
     last = len(arr) - 1
     first = 0
@@ -19,7 +19,10 @@ def binary_search(arr, key):
             last = mid - 1
     return pos
 
-# Defines the main function
 def main():
+    """
+    The main function.
+    """
     arr = [23, 51, 5, 15, 7]
+    arr.sort()
     print(binary_search(arr, 23))

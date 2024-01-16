@@ -1,5 +1,8 @@
-# Defines a function that calculates the mean of an array of grades
 def calculate_mean(arr):
+    """
+    Calculate the mean of an array of grades.
+    @param arr - The array of grades.
+    """
     total_sum = 0
     count = 0
     for student in arr:
@@ -10,23 +13,33 @@ def calculate_mean(arr):
     grades_mean = total_sum // count if count else 0
     return grades_mean
 
-# Defines a function that searches for a student by name
 def search_student(name, arr):
+    """
+    Search for a student by name.
+    @param name - The name of the student to search for.
+    @param arr - The array of students.
+    """
     for student in arr:
         if student["name"] == name:
             return student
         return None
 
-# Defines a function that sorts an array of students by a subject
 def sort_students(arr, subject):
+    """
+    Sort an array of students by a subject.
+    @param arr - The array of students.
+    @param subject - The subject to sort by.
+    """
     for student in arr:
         if subject not in student:
             return None
         arr.sort(key=lambda x: x[subject])
         return arr
 
-# Defines the main function
 def main():
+    """
+    The main function.
+    """
     students = [
         {"name": "Alice", "math": 75, "physics": 82, "chemistry": 90},
         {"name": "Bob", "math": 88, "physics": 79, "chemistry": 95},

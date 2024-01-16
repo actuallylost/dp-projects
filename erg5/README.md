@@ -68,12 +68,12 @@ The fixed code snippet implemented the following changes
 ### Final code snippet
 
 ```python
-# Defines a function that implements binary search
 def binary_search(arr, key):
-    # Sorts the array to make sure binary search can be applied
-    arr.sort()
-    # Prints the sorted array for debugging purposes
-    print(arr)
+    """
+    Implement binary search.
+    @param arr - The array to search.
+    @param key - The key to search for.
+    """
     # Defines the first and last index of the array
     last = len(arr) - 1
     first = 0
@@ -89,13 +89,16 @@ def binary_search(arr, key):
             last = mid - 1
     return pos
 
-# Defines the main function
 def main():
+    """
+    The main function.
+    """
     arr = [23, 51, 5, 15, 7]
+    arr.sort()
     print(binary_search(arr, 23))
 ```
 
-The final code snippet adds comments to the code to make it more readable and understandable.
+The final code snippet adds comments to the code to make it more readable and understandable. It also assumes that the array is sorted before calling the function.
 
 ### Tests
 
@@ -105,7 +108,6 @@ The test cases for the binary search algorithm are the following:
 - Array with one element as input and the key element being present in the array, which expect the output to be `0`.
 - Sorted array with five elements and the key element being present in the array, which expects the output to be `2`.
 - Sorted array with five elements and the key element not being present in the array, which expects the output to be `-1`.
-- Unsorted array with five elements and the key element being present in the array, which expects the output to be `2`.
 
 ## Grades
 
@@ -135,8 +137,11 @@ This file contains the implementation of three functions:
 ### Final code snippet
 
 ```python
-# Defines a function that calculates the mean of an array of grades
 def calculate_mean(arr):
+    """
+    Calculate the mean of an array of grades.
+    @param arr - The array of grades.
+    """
     total_sum = 0
     count = 0
     for student in arr:
@@ -147,23 +152,33 @@ def calculate_mean(arr):
     grades_mean = total_sum // count if count else 0
     return grades_mean
 
-# Defines a function that searches for a student by name
 def search_student(name, arr):
+    """
+    Search for a student by name.
+    @param name - The name of the student to search for.
+    @param arr - The array of students.
+    """
     for student in arr:
         if student["name"] == name:
             return student
         return None
 
-# Defines a function that sorts an array of students by a subject
 def sort_students(arr, subject):
+    """
+    Sort an array of students by a subject.
+    @param arr - The array of students.
+    @param subject - The subject to sort by.
+    """
     for student in arr:
         if subject not in student:
             return None
         arr.sort(key=lambda x: x[subject])
         return arr
 
-# Defines the main function
 def main():
+    """
+    The main function.
+    """
     students = [
         {"name": "Alice", "math": 75, "physics": 82, "chemistry": 90},
         {"name": "Bob", "math": 88, "physics": 79, "chemistry": 95},
