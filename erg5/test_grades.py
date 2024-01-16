@@ -42,6 +42,59 @@ def test_search_student_not_found():
     ]
     assert search_student("Bob", grades) is None
 
+# Defines test function for sort_students with an empty array as input and math as the subject
 def test_sort_students_empty_array():
     grades = []
     assert sort_students(grades, "math") is None
+
+# Defines test function for sort_students with an array with multiple students as input but the
+# subject is not in the array
+def test_sort_students_subject_not_found():
+    grades = [
+        {"name": "Alice", "math": 75, "physics": 82, "chemistry": 90},
+        {"name": "Bob", "math": 88, "physics": 79, "chemistry": 95},
+        {"name": "Charlie", "math": 92, "physics": 85, "chemistry": 88},
+    ]
+    assert sort_students(grades, "history") is None
+
+# Defines test function for sort_students with an array with multiple students as input
+# and math as the subject
+def test_sort_students_math():
+    grades = [
+        {"name": "Charlie", "math": 92, "physics": 85, "chemistry": 88},
+        {"name": "Alice", "math": 75, "physics": 82, "chemistry": 90},
+        {"name": "Bob", "math": 88, "physics": 79, "chemistry": 95},
+    ]
+    assert sort_students(grades, "math") == [
+        {"name": "Alice", "math": 75, "physics": 82, "chemistry": 90},
+        {"name": "Bob", "math": 88, "physics": 79, "chemistry": 95},
+        {"name": "Charlie", "math": 92, "physics": 85, "chemistry": 88},
+    ]
+
+# Defines test function for sort_students with an array with multiple students as input
+# and physics as the subject
+def test_sort_students_physics():
+    grades = [
+        {"name": "Charlie", "math": 92, "physics": 85, "chemistry": 88},
+        {"name": "Alice", "math": 75, "physics": 82, "chemistry": 90},
+        {"name": "Bob", "math": 88, "physics": 79, "chemistry": 95},
+    ]
+    assert sort_students(grades, "physics") == [
+        {"name": "Bob", "math": 88, "physics": 79, "chemistry": 95},
+        {"name": "Alice", "math": 75, "physics": 82, "chemistry": 90},
+        {"name": "Charlie", "math": 92, "physics": 85, "chemistry": 88},
+    ]
+
+# Defines test function for sort_students with an array with multiple students as input
+# and chemistry as the subject
+def test_sort_students_chemistry():
+    grades = [
+        {"name": "Charlie", "math": 92, "physics": 85, "chemistry": 88},
+        {"name": "Alice", "math": 75, "physics": 82, "chemistry": 90},
+        {"name": "Bob", "math": 88, "physics": 79, "chemistry": 95},
+    ]
+    assert sort_students(grades, "chemistry") == [
+        {"name": "Charlie", "math": 92, "physics": 85, "chemistry": 88},
+        {"name": "Alice", "math": 75, "physics": 82, "chemistry": 90},
+        {"name": "Bob", "math": 88, "physics": 79, "chemistry": 95},
+    ]
